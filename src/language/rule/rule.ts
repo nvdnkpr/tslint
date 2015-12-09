@@ -18,6 +18,58 @@
 import * as ts from "typescript";
 import {RuleWalker} from "../walker/ruleWalker";
 
+export interface IRuleMetadata {
+    name: string;
+    // type should be a RuleType member
+    type: string;
+    description: string;
+    options: IRuleOption;
+    optionExamples?: string[];
+    rationale?: string;
+}
+
+export const RuleType = {
+    FUNCTIONALITY: "functionality",
+    MAINTAINABILITY: "maintainability",
+    READABILITY: "readability",
+};
+
+export type IRuleOption = IArrayRuleOption | IEnumRuleOption | IListRuleOption | IObjectRuleOption | IStringRuleOption;
+
+export interface IBaseRuleOption {
+    description?: string;
+    type: string;
+}
+
+export interface IArrayRuleOption extends IBaseRuleOption {
+    arrayMembers: IRuleOption[];
+}
+
+export interface IEnumRuleOption extends IBaseRuleOption {
+    enumValues: string[];
+}
+
+export interface IListRuleOption extends IBaseRuleOption {
+    listType: IRuleOption;
+}
+
+export interface IObjectRuleOption extends IBaseRuleOption {
+    properties: { [key: string]: IRuleOption };
+}
+
+export interface IStringRuleOption extends IBaseRuleOption { }
+
+export const RuleOptionType = {
+    ARRAY: "array",
+    ENUM: "enum",
+    LIST: "list",
+    NUMBER: "number",
+    OBJECT: "object",
+    STRING: "string"
+};
+
+
+
 export interface IOptions {
     ruleArguments?: any[];
     ruleName: string;

@@ -19,6 +19,26 @@ import * as ts from "typescript";
 import * as Lint from "../lint";
 
 export class Rule extends Lint.Rules.AbstractRule {
+    /* tslint:disable:object-literal-sort-keys */
+    public static metadata: Lint.IRuleMetadata = {
+        name: "ban",
+        description: "Bans the use of specific functions.",
+        options: {
+            type: Lint.RuleOptionType.LIST,
+            description: "Contains ['object', 'function'] pairs so that object.function() is banned.",
+            listType: {
+                type: Lint.RuleOptionType.ARRAY,
+                arrayMembers: [
+                    { description: "Object to ban", type: Lint.RuleOptionType.STRING },
+                    { description: "Method name to ban", type: Lint.RuleOptionType.STRING },
+                ],
+            },
+        },
+        optionExamples: [`[true, ['console', 'log'], ['someObject', 'someFunction']]`],
+        type: Lint.RuleType.READABILITY,
+    };
+    /* tslint:enable:object-literal-sort-keys */
+
     public static FAILURE_STRING_PART = "function invocation disallowed: ";
 
     public apply(sourceFile: ts.SourceFile): Lint.RuleFailure[] {

@@ -19,6 +19,21 @@ import * as Lint from "../lint";
 import * as ts from "typescript";
 
 export class Rule extends Lint.Rules.AbstractRule {
+    /* tslint:disable:object-literal-sort-keys */
+    public static metadata: Lint.IRuleMetadata = {
+        name: "align",
+        description: "enforces vertical alignment",
+        options: {
+            type: Lint.RuleOptionType.LIST,
+            listType: {
+                type: Lint.RuleOptionType.ENUM,
+                enumValues: ["arguments", "parameters", "statements"],
+            },
+        },
+        type: Lint.RuleType.READABILITY,
+    };
+    /* tslint:enable:object-literal-sort-keys */
+
     public static PARAMETERS_OPTION = "parameters";
     public static ARGUMENTS_OPTION = "arguments";
     public static STATEMENTS_OPTION = "statements";
