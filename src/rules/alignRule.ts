@@ -24,13 +24,13 @@ export class Rule extends Lint.Rules.AbstractRule {
         name: "align",
         description: "enforces vertical alignment",
         options: {
-            type: Lint.RuleOptionType.LIST,
+            type: "list",
             listType: {
-                type: Lint.RuleOptionType.ENUM,
+                type: "enum",
                 enumValues: ["arguments", "parameters", "statements"],
             },
         },
-        type: Lint.RuleType.READABILITY,
+        type: "style",
     };
     /* tslint:enable:object-literal-sort-keys */
 

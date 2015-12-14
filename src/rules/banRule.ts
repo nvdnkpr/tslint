@@ -24,18 +24,18 @@ export class Rule extends Lint.Rules.AbstractRule {
         name: "ban",
         description: "Bans the use of specific functions.",
         options: {
-            type: Lint.RuleOptionType.LIST,
+            type: "list",
             description: "Contains ['object', 'function'] pairs so that object.function() is banned.",
             listType: {
-                type: Lint.RuleOptionType.ARRAY,
+                type: "array",
                 arrayMembers: [
-                    { description: "Object to ban", type: Lint.RuleOptionType.STRING },
-                    { description: "Method name to ban", type: Lint.RuleOptionType.STRING },
+                    { description: "Object to ban", type: "string" },
+                    { description: "Method name to ban", type: "string" },
                 ],
             },
         },
-        optionExamples: [`[true, ['console', 'log'], ['someObject', 'someFunction']]`],
-        type: Lint.RuleType.READABILITY,
+        optionExamples: [`[true, ["console", "log"], ["someObject", "someFunction"]]`],
+        type: "style",
     };
     /* tslint:enable:object-literal-sort-keys */
 

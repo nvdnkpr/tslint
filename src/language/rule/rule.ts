@@ -21,24 +21,20 @@ import {RuleWalker} from "../walker/ruleWalker";
 export interface IRuleMetadata {
     name: string;
     // type should be a RuleType member
-    type: string;
+    type: RuleType;
     description: string;
     options: IRuleOption;
     optionExamples?: string[];
     rationale?: string;
 }
 
-export const RuleType = {
-    FUNCTIONALITY: "functionality",
-    MAINTAINABILITY: "maintainability",
-    READABILITY: "readability",
-};
+export type RuleType = "functionality" | "maintainability" | "style";
 
 export type IRuleOption = IArrayRuleOption | IEnumRuleOption | IListRuleOption | IObjectRuleOption | IStringRuleOption;
 
 export interface IBaseRuleOption {
     description?: string;
-    type: string;
+    type: RuleOptionType;
 }
 
 export interface IArrayRuleOption extends IBaseRuleOption {
@@ -59,16 +55,7 @@ export interface IObjectRuleOption extends IBaseRuleOption {
 
 export interface IStringRuleOption extends IBaseRuleOption { }
 
-export const RuleOptionType = {
-    ARRAY: "array",
-    ENUM: "enum",
-    LIST: "list",
-    NUMBER: "number",
-    OBJECT: "object",
-    STRING: "string"
-};
-
-
+export type RuleOptionType = "array" | "enum" | "list" | "number" | "object" | "string";
 
 export interface IOptions {
     ruleArguments?: any[];
