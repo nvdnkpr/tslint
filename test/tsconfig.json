@@ -110,6 +110,7 @@
         "../src/rules/whitespaceRule.ts",
         "../src/tslint-cli.ts",
         "../src/tslint.ts",
+        "../src/utils.ts",
         "assert.ts",
         "lint.ts",
         "ruleDisableEnableTests.ts",

@@ -40,5 +40,5 @@ function generateRuleFile(metadata: IRuleMetadata) {
     yamlData.optionsJSON = JSON.stringify(metadata.options, undefined, "  ");
     yamlData.layout = "rule";
     yamlData.title = `Rule: ${metadata.ruleName}`;
-    return `---\n${yaml.safeDump(yamlData)}---`;
+    return `---\n${yaml.safeDump(yamlData, <any>{lineWidth: 140})}---`;
 }

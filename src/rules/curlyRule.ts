@@ -23,6 +23,16 @@ export class Rule extends Lint.Rules.AbstractRule {
     public static metadata: Lint.IRuleMetadata = {
         ruleName: "curly",
         description: "Enforces braces for `if`/`for`/`do`/`while` statements.",
+        rationale: Lint.Utils.dedent`
+            \`\`\`ts
+            if (foo === bar)
+                foo++;
+                bar++;
+            \`\`\`
+
+            In the code above, the author almost certainly meant for both \`foo++\` and \`bar++\`
+            to be executed only if \`foo === bar\`. However, he forgot braces and \`bar++\` will be executed
+            no matter what. This rule could prevent such a mistake.`,
         optionsDescription: "Not configurable.",
         options: {},
         optionExamples: ["true"],

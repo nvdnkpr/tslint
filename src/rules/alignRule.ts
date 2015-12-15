@@ -23,12 +23,13 @@ export class Rule extends Lint.Rules.AbstractRule {
     public static metadata: Lint.IRuleMetadata = {
         ruleName: "align",
         description: "Enforces vertical alignment.",
-        optionsDescription:
-`Three arguments may be optionally provided:
+        rationale: "Helps maintain a readable style in your codebase.",
+        optionsDescription: Lint.Utils.dedent`
+            Three arguments may be optionally provided:
 
-* \`"parameters"\` checks alignment of function parameters.
-* \`"arguments"\` checks alignment of function call arguments.
-* \`"statements"\` checks alignment of statements.`,
+            * \`"parameters"\` checks alignment of function parameters.
+            * \`"arguments"\` checks alignment of function call arguments.
+            * \`"statements"\` checks alignment of statements.`,
         options: {
             type: "list",
             listType: {

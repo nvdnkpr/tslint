@@ -36,6 +36,7 @@
         "rules.ts",
         "tslint-cli.ts",
         "tslint.ts",
+        "utils.ts",
         "formatters/index.ts",
         "formatters/jsonFormatter.ts",
         "formatters/pmdFormatter.ts",
