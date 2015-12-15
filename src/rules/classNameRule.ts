@@ -21,9 +21,10 @@ import * as Lint from "../lint";
 export class Rule extends Lint.Rules.AbstractRule {
     /* tslint:disable:object-literal-sort-keys */
     public static metadata: Lint.IRuleMetadata = {
-        name: "class-name",
-        description: "enforces PascalCased class and interface names",
-        options: null,
+        ruleName: "class-name",
+        description: "Enforces PascalCased class and interface names.",
+        optionsDescription: "Not configurable.",
+        options: {},
         optionExamples: ["true"],
         type: "style",
     };

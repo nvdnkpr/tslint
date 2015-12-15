@@ -21,21 +21,21 @@ import * as Lint from "../lint";
 export class Rule extends Lint.Rules.AbstractRule {
     /* tslint:disable:object-literal-sort-keys */
     public static metadata: Lint.IRuleMetadata = {
-        name: "ban",
+        ruleName: "ban",
         description: "Bans the use of specific functions.",
+        optionsDescription: "A list of `['object', 'method']` pairs which ban `object.method()`.",
         options: {
             type: "list",
-            description: "Contains ['object', 'function'] pairs so that object.function() is banned.",
             listType: {
                 type: "array",
                 arrayMembers: [
-                    { description: "Object to ban", type: "string" },
-                    { description: "Method name to ban", type: "string" },
+                    { type: "string" },
+                    { type: "string" },
                 ],
             },
         },
         optionExamples: [`[true, ["console", "log"], ["someObject", "someFunction"]]`],
-        type: "style",
+        type: "functionality",
     };
     /* tslint:enable:object-literal-sort-keys */
 

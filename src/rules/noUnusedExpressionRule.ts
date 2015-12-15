@@ -19,6 +19,18 @@ import * as Lint from "../lint";
 import * as ts from "typescript";
 
 export class Rule extends Lint.Rules.AbstractRule {
+    /* tslint:disable:object-literal-sort-keys */
+    public static metadata: Lint.IRuleMetadata = {
+        ruleName: "no-unused-expression",
+        description: "Disallows unused expression statements.",
+        descriptionDetails: "Unused expressions are expression statements which are not assignments or function calls (and thus no-ops).",
+        optionsDescription: "Not configurable.",
+        options: {},
+        optionExamples: ["true"],
+        type: "functionality",
+    };
+    /* tslint:enable:object-literal-sort-keys */
+
     public static FAILURE_STRING = "expected an assignment or function call";
 
     public apply(sourceFile: ts.SourceFile): Lint.RuleFailure[] {

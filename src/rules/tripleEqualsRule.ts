@@ -21,6 +21,17 @@ import * as Lint from "../lint";
 const OPTION_ALLOW_NULL_CHECK = "allow-null-check";
 
 export class Rule extends Lint.Rules.AbstractRule {
+    /* tslint:disable:object-literal-sort-keys */
+    public static metadata: Lint.IRuleMetadata = {
+        ruleName: "triple-equals",
+        description: "Requires `===` and `!==` in place of `==` and `!=`.",
+        optionsDescription: "Not configurable.",
+        options: {},
+        optionExamples: ["true"],
+        type: "functionality",
+    };
+    /* tslint:enable:object-literal-sort-keys */
+
     public static EQ_FAILURE_STRING = "== should be ===";
     public static NEQ_FAILURE_STRING = "!= should be !==";
 

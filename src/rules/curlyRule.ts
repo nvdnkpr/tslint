@@ -19,6 +19,17 @@ import * as ts from "typescript";
 import * as Lint from "../lint";
 
 export class Rule extends Lint.Rules.AbstractRule {
+    /* tslint:disable:object-literal-sort-keys */
+    public static metadata: Lint.IRuleMetadata = {
+        ruleName: "curly",
+        description: "Enforces braces for `if`/`for`/`do`/`while` statements.",
+        optionsDescription: "Not configurable.",
+        options: {},
+        optionExamples: ["true"],
+        type: "functionality",
+    };
+    /* tslint:enable:object-literal-sort-keys */
+
     public static DO_FAILURE_STRING = "do statements must be braced";
     public static ELSE_FAILURE_STRING = "else statements must be braced";
     public static FOR_FAILURE_STRING = "for statements must be braced";

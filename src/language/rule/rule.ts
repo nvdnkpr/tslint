@@ -19,10 +19,17 @@ import * as ts from "typescript";
 import {RuleWalker} from "../walker/ruleWalker";
 
 export interface IRuleMetadata {
-    name: string;
-    // type should be a RuleType member
+    ruleName: string;
     type: RuleType;
+    /**
+    * A short, one line description of what the rule does.
+    */
     description: string;
+    /**
+    * More elaborate details about the rule
+    */
+    descriptionDetails?: string;
+    optionsDescription?: string;
     options: IRuleOption;
     optionExamples?: string[];
     rationale?: string;
@@ -34,7 +41,7 @@ export type IRuleOption = IArrayRuleOption | IEnumRuleOption | IListRuleOption |
 
 export interface IBaseRuleOption {
     description?: string;
-    type: RuleOptionType;
+    type?: RuleOptionType;
 }
 
 export interface IArrayRuleOption extends IBaseRuleOption {

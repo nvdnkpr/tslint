@@ -19,6 +19,19 @@ import * as ts from "typescript";
 import * as Lint from "../lint";
 
 export class Rule extends Lint.Rules.AbstractRule {
+    /* tslint:disable:object-literal-sort-keys */
+    public static metadata: Lint.IRuleMetadata = {
+        ruleName: "max-line-length",
+        description: "Requires lines to be under a certain max length.",
+        optionsDescription: "An integer indicating the max length of lines.",
+        options: {
+            type: "number"
+        },
+        optionExamples: ["[true, 120]"],
+        type: "maintainability",
+    };
+    /* tslint:enable:object-literal-sort-keys */
+
     public static FAILURE_STRING = "exceeds maximum line length of ";
 
     public isEnabled(): boolean {

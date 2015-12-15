@@ -20,6 +20,22 @@ import * as Lint from "../lint";
 import * as BanRule from "./banRule";
 
 export class Rule extends BanRule.Rule {
+    /* tslint:disable:object-literal-sort-keys */
+    public static metadata: Lint.IRuleMetadata = {
+        ruleName: "no-console",
+        description: "Bans the use of specified `console` methods.",
+        optionsDescription: "A list of method names to ban.",
+        options: {
+            type: "list",
+            listType: {
+                type: "string",
+            },
+        },
+        optionExamples: [`[true, ["log", "error"]]`],
+        type: "functionality",
+    };
+    /* tslint:enable:object-literal-sort-keys */
+
     public apply(sourceFile: ts.SourceFile): Lint.RuleFailure[] {
         const options = this.getOptions();
         const consoleBanWalker = new BanRule.BanFunctionWalker(sourceFile, this.getOptions());

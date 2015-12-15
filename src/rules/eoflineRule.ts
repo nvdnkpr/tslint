@@ -19,6 +19,16 @@ import * as Lint from "../lint";
 import * as ts from "typescript";
 
 export class Rule extends Lint.Rules.AbstractRule {
+    /* tslint:disable:object-literal-sort-keys */
+    public static metadata: Lint.IRuleMetadata = {
+        ruleName: "eofline",
+        description: "Ensures the file ends with a newline.",
+        optionsDescription: "Not configurable.",
+        options: {},
+        optionExamples: ["true"],
+        type: "maintainability",
+    };
+    /* tslint:enable:object-literal-sort-keys */
     public static FAILURE_STRING = "file should end with a newline";
 
     public apply(sourceFile: ts.SourceFile): Lint.RuleFailure[] {

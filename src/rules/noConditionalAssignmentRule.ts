@@ -19,6 +19,18 @@ import * as ts from "typescript";
 import * as Lint from "../lint";
 
 export class Rule extends Lint.Rules.AbstractRule {
+    /* tslint:disable:object-literal-sort-keys */
+    public static metadata: Lint.IRuleMetadata = {
+        ruleName: "no-conditional-assignment",
+        description: "Disallows any type of assignment in conditionals.",
+        descriptionDetails: "This applies to `do-while`, `for`, `if`, and `while` statements.",
+        optionsDescription: "Not configurable.",
+        options: {},
+        optionExamples: ["true"],
+        type: "functionality",
+    };
+    /* tslint:enable:object-literal-sort-keys */
+
     public static FAILURE_STRING = "assignment in conditional: ";
 
     public apply(sourceFile: ts.SourceFile): Lint.RuleFailure[] {

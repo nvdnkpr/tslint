@@ -21,6 +21,17 @@ import * as ts from "typescript";
 import * as Lint from "../lint";
 
 export class Rule extends Lint.Rules.AbstractRule {
+    /* tslint:disable:object-literal-sort-keys */
+    public static metadata: Lint.IRuleMetadata = {
+        ruleName: "no-null-keyword",
+        description: "Disallows use of the `null` keyword literal.",
+        optionsDescription: "Not configurable.",
+        options: {},
+        optionExamples: ["true"],
+        type: "functionality",
+    };
+    /* tslint:enable:object-literal-sort-keys */
+
     public static FAILURE_STRING = "Use 'undefined' instead of 'null'";
 
     public apply(sourceFile: ts.SourceFile): Lint.RuleFailure[] {

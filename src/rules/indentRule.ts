@@ -22,6 +22,24 @@ const OPTION_USE_TABS = "tabs";
 const OPTION_USE_SPACES = "spaces";
 
 export class Rule extends Lint.Rules.AbstractRule {
+    /* tslint:disable:object-literal-sort-keys */
+    public static metadata: Lint.IRuleMetadata = {
+        ruleName: "indent",
+        description: "Enforces indentation with tabs or spaces.",
+        optionsDescription:
+`One of the following arguments must be provided:
+
+* \`"spaces"\` enforces consistent spaces.
+* \`"tabs"\` enforces consistent tabs.`,
+        options: {
+            type: "enum",
+            enumValues: ["tabs", "spaces"],
+        },
+        optionExamples: ['[true, "spaces"]'],
+        type: "maintainability",
+    };
+    /* tslint:enable:object-literal-sort-keys */
+
     public static FAILURE_STRING_TABS = "tab indentation expected";
     public static FAILURE_STRING_SPACES = "space indentation expected";
 
