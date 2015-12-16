@@ -27,7 +27,7 @@ export class Rule extends Lint.Rules.AbstractRule {
         optionsDescription: "Not configurable.",
         options: {},
         optionExamples: ["true"],
-        type: "style",
+        type: "typescript",
     };
     /* tslint:enable:object-literal-sort-keys */
 

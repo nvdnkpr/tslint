@@ -24,16 +24,16 @@ export class Rule extends Lint.Rules.AbstractRule {
         ruleName: "typedef-whitespace",
         description: "Requires or disallows whitespace for type definitions.",
         descriptionDetails: "Determines if a space is required or not before the colon in a type specifier.",
-        optionsDescription:
-`One argument which is an object.
-Each key should have a value of \`"space"\` or \`"nospace"\`.
-Possible keys are:
+        optionsDescription: Lint.Utils.dedent`
+            One argument which is an object.
+            Each key should have a value of \`"space"\` or \`"nospace"\`.
+            Possible keys are:
 
-* \`"call-signature"\` checks return type of functions.
-* \`"index-signature"\` checks index type specifier of indexers.
-* \`"parameter"\` checks function parameters.
-* \`"property-declaration"\` checks object property declarations.
-* \`"variable-declaration"\` checks variable declaration.`,
+            * \`"call-signature"\` checks return type of functions.
+            * \`"index-signature"\` checks index type specifier of indexers.
+            * \`"parameter"\` checks function parameters.
+            * \`"property-declaration"\` checks object property declarations.
+            * \`"variable-declaration"\` checks variable declaration.`,
         options: {
             type: "object",
             properties: {
@@ -60,7 +60,7 @@ Possible keys are:
             },
         },
         optionExamples: ['[true, {"parameter": "space", "property-declaration" : "space"}]'],
-        type: "style",
+        type: "typescript",
     };
     /* tslint:enable:object-literal-sort-keys */
 

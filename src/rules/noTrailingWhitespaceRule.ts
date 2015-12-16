@@ -23,6 +23,7 @@ export class Rule extends Lint.Rules.AbstractRule {
     public static metadata: Lint.IRuleMetadata = {
         ruleName: "no-trailing-whitespace",
         description: "Disallows trailing whitespace at the end of a line.",
+        rationale: "Keeps version control diffs clean as it prevents accidental whitespace from being committed.",
         optionsDescription: "Not configurable.",
         options: {},
         optionExamples: ["true"],

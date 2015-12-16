@@ -41,7 +41,7 @@ export class Rule extends Lint.Rules.AbstractRule {
             },
         },
         optionExamples: ['[true, "public-before-private", "static-before-instance"]'],
-        type: "maintainability",
+        type: "typescript",
     };
     /* tslint:enable:object-literal-sort-keys */
     public apply(sourceFile: ts.SourceFile): Lint.RuleFailure[] {

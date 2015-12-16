@@ -28,13 +28,13 @@ export class Rule extends Lint.Rules.AbstractRule {
     public static metadata: Lint.IRuleMetadata = {
         ruleName: "one-line",
         description: "Requires the specified tokens to be on the same line as the expression preceding them.",
-        optionsDescription:
-`Four arguments may be optionally provided:
+        optionsDescription: Lint.Utils.dedent`
+            Four arguments may be optionally provided:
 
-  * \`"check-catch"\` checks that \`catch\` is on the same line as the closing brace for \`try\`.
-  * \`"check-else"\` checks that \`else\` is on the same line as the closing brace for \`if\`.
-  * \`"check-open-brace"\` checks that an open brace falls on the same line as its preceding expression.
-  * \`"check-whitespace"\` checks preceding whitespace for the specified tokens.`,
+            * \`"check-catch"\` checks that \`catch\` is on the same line as the closing brace for \`try\`.
+            * \`"check-else"\` checks that \`else\` is on the same line as the closing brace for \`if\`.
+            * \`"check-open-brace"\` checks that an open brace falls on the same line as its preceding expression.
+            * \`"check-whitespace"\` checks preceding whitespace for the specified tokens.`,
         options: {
             type: "list",
             listType: {

@@ -28,13 +28,13 @@ export class Rule extends Lint.Rules.AbstractRule {
     public static metadata: Lint.IRuleMetadata = {
         ruleName: "quotemark",
         description: "Requires single or double quotes for string literals.",
-        optionsDescription:
-`Three arguments may be optionally provided:
+        optionsDescription: Lint.Utils.dedent`
+            Three arguments may be optionally provided:
 
-* \`"single"\` enforces single quotes.
-* \`"double"\` enforces double quotes.
-* \`"avoid-escape"\` allows you to use the "other" quotemark in cases where escaping would normally be required.
-For example, \`[true, "double", "avoid-escape"]\` would not report a failure on the string literal \`'Hello "World"'\`.`,
+            * \`"single"\` enforces single quotes.
+            * \`"double"\` enforces double quotes.
+            * \`"avoid-escape"\` allows you to use the "other" quotemark in cases where escaping would normally be required.
+            For example, \`[true, "double", "avoid-escape"]\` would not report a failure on the string literal \`'Hello "World"'\`.`,
         options: {
             type: "list",
             listType: {

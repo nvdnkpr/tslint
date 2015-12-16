@@ -30,14 +30,14 @@ export class Rule extends Lint.Rules.AbstractRule {
     public static metadata: Lint.IRuleMetadata = {
         ruleName: "variable-name",
         description: "Checks variable names for various errors.",
-        optionsDescription:
-`Four arguments may be optionally provided:
+        optionsDescription: Lint.Utils.dedent`
+            Four arguments may be optionally provided:
 
-* \`"check-format"\`: allows only camelCased or UPPER_CASED variable names
-  * \`"allow-leading-underscore"\` allows underscores at the beginning (only has an effect if "check-format" specified)
-  * \`"allow-trailing-underscore"\` allows underscores at the end. (only has an effect if "check-format" specified)
-* \`"ban-keywords"\`: disallows the use of certain TypeScript keywords
-(\`any\`, \`Number\`, \`number\`, \`String\`, \`string\`, \`Boolean\`, \`boolean\`, \`undefined\`) as variable or parameter names.`,
+            * \`"check-format"\`: allows only camelCased or UPPER_CASED variable names
+              * \`"allow-leading-underscore"\` allows underscores at the beginning (only has an effect if "check-format" specified)
+              * \`"allow-trailing-underscore"\` allows underscores at the end. (only has an effect if "check-format" specified)
+            * \`"ban-keywords"\`: disallows the use of certain TypeScript keywords (\`any\`, \`Number\`, \`number\`, \`String\`,
+            \`string\`, \`Boolean\`, \`boolean\`, \`undefined\`) as variable or parameter names.`,
         options: {
             type: "list",
             listType: {

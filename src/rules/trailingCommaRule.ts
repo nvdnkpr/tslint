@@ -23,12 +23,12 @@ export class Rule extends Lint.Rules.AbstractRule {
     public static metadata: Lint.IRuleMetadata = {
         ruleName: "trailing-comma",
         description: "Requires or disallows trailing commas in array and object literals, destructuring assignments and named imports.",
-        optionsDescription:
-`One argument which is an object with the keys \`multiline\` and \`singleline\`.
-Both should be set to either \`"always"\` or \`"never"\`.
+        optionsDescription: Lint.Utils.dedent`
+            One argument which is an object with the keys \`multiline\` and \`singleline\`.
+            Both should be set to either \`"always"\` or \`"never"\`.
 
-* \`"multiline"\` checks multi-line object literals.
-* \`"singleline"\` checks single-line object literals.`,
+            * \`"multiline"\` checks multi-line object literals.
+            * \`"singleline"\` checks single-line object literals.`,
         options: {
             type: "object",
             properties: {

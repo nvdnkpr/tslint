@@ -23,6 +23,7 @@ export class Rule extends Lint.Rules.AbstractRule {
     public static metadata: Lint.IRuleMetadata = {
         ruleName: "no-string-literal",
         description: "Disallows object access via string literals.",
+        rationale: "Encourages using typed property access.",
         optionsDescription: "Not configurable.",
         options: {},
         optionExamples: ["true"],

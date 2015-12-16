@@ -37,7 +37,7 @@ export class Rule extends Lint.Rules.AbstractRule {
             },
         },
         optionExamples: ["true", '[true, "check-accessor"]'],
-        type: "style",
+        type: "typescript",
     };
     /* tslint:enable:object-literal-sort-keys */
 

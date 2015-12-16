@@ -23,6 +23,7 @@ export class Rule extends Lint.Rules.AbstractRule {
     public static metadata: Lint.IRuleMetadata = {
         ruleName: "no-switch-case-fall-through",
         description: "Disallows falling through case statements.",
+        rationale: "Fall though in switch statements is often unintentional and a bug.",
         optionsDescription: "Not configurable.",
         options: {},
         optionExamples: ["true"],

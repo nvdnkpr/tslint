@@ -22,7 +22,8 @@ export class Rule extends Lint.Rules.AbstractRule {
     /* tslint:disable:object-literal-sort-keys */
     public static metadata: Lint.IRuleMetadata = {
         ruleName: "no-consecutive-blank-lines",
-        description: "Disallows having more than one blank line in a row.",
+        description: "Disallows more than one blank line in a row.",
+        rationale: "Helps maintain a readable style in your codebase.",
         optionsDescription: "Not configurable.",
         options: {},
         optionExamples: ["true"],

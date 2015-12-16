@@ -23,11 +23,11 @@ export class Rule extends Lint.Rules.AbstractRule {
     public static metadata: Lint.IRuleMetadata = {
         ruleName: "use-strict",
         description: "Requires using ECMAScript 5's strict mode.",
-        optionsDescription:
-`Two arguments may be optionally provided:
+        optionsDescription: Lint.Utils.dedent`
+            Two arguments may be optionally provided:
 
-* \`check-module\` checks that all top-level modules are using strict mode.
-* \`check-function\` checks that all top-level functions are using strict mode.`,
+            * \`check-module\` checks that all top-level modules are using strict mode.
+            * \`check-function\` checks that all top-level functions are using strict mode.`,
         options: {
             type: "list",
             listType: {

@@ -22,15 +22,15 @@ export class Rule extends Lint.Rules.AbstractRule {
     /* tslint:disable:object-literal-sort-keys */
     public static metadata: Lint.IRuleMetadata = {
         ruleName: "typedef",
-        description: "Requires type defintions to exist.",
-        optionsDescription:
-`Five arguments may be optionally provided:
+        description: "Requires type definitions to exist.",
+        optionsDescription: Lint.Utils.dedent`
+            Five arguments may be optionally provided:
 
-* \`"call-signature"\` checks return type of functions.
-* \`"parameter"\` checks type specifier of function parameters.
-* \`"property-declaration"\` checks return types of interface properties.
-* \`"variable-declaration"\` checks variable declarations.
-* \`"member-variable-declaration"\` checks member variable declarations.`,
+            * \`"call-signature"\` checks return type of functions.
+            * \`"parameter"\` checks type specifier of function parameters.
+            * \`"property-declaration"\` checks return types of interface properties.
+            * \`"variable-declaration"\` checks variable declarations.
+            * \`"member-variable-declaration"\` checks member variable declarations.`,
         options: {
             type: "list",
             listType: {
@@ -39,7 +39,7 @@ export class Rule extends Lint.Rules.AbstractRule {
             },
         },
         optionExamples: ['[true, "call-signature", "member-variable-declaration"]'],
-        type: "functionality",
+        type: "typescript",
     };
     /* tslint:enable:object-literal-sort-keys */
 

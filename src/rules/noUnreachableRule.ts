@@ -23,6 +23,7 @@ export class Rule extends Lint.Rules.AbstractRule {
     public static metadata: Lint.IRuleMetadata = {
         ruleName: "no-unreachable",
         description: "Disallows unreachable code after `break`, `catch`, `throw`, and `return` statements.",
+        rationale: "Unreachable code is often indication of a logic error.",
         optionsDescription: "Not configurable.",
         options: {},
         optionExamples: ["true"],

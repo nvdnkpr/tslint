@@ -62,7 +62,7 @@ export interface IRuleMetadata {
     rationale?: string;
 }
 
-export type RuleType = "functionality" | "maintainability" | "style";
+export type RuleType = "functionality" | "maintainability" | "style" | "typescript";
 
 export type RuleOptionType = "array" | "enum" | "list" | "number" | "object" | "string";
 
