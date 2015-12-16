@@ -23,6 +23,7 @@ export class Rule extends Lint.Rules.AbstractRule {
     public static metadata: Lint.IRuleMetadata = {
         ruleName: "no-inferrable-types",
         description: "Disallows explicit type declarations for variables or parameters initialized to a number, string, or boolean.",
+        rationale: "Explicit types where they can be easily infered by the compiler make code more verbose.",
         optionsDescription: "Not configurable.",
         options: {},
         optionExamples: ["true"],

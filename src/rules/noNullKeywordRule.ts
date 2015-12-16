@@ -25,6 +25,9 @@ export class Rule extends Lint.Rules.AbstractRule {
     public static metadata: Lint.IRuleMetadata = {
         ruleName: "no-null-keyword",
         description: "Disallows use of the `null` keyword literal.",
+        rationale: Lint.Utils.dedent`
+            Instead of having the dual concepts of \`null\` and\`undefined\` in a codebase,
+            this rule ensures that only \`undefined\` is used.`,
         optionsDescription: "Not configurable.",
         options: {},
         optionExamples: ["true"],

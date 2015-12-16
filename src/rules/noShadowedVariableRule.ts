@@ -22,7 +22,8 @@ export class Rule extends Lint.Rules.AbstractRule {
     /* tslint:disable:object-literal-sort-keys */
     public static metadata: Lint.IRuleMetadata = {
         ruleName: "no-shadowed-variable",
-        description: "Disallows shadowed variable declarations.",
+        description: "Disallows shadowing variable declarations.",
+        rationale: "Shadowing a variable masks access to it and obscures to what value an identifier actually refers.",
         optionsDescription: "Not configurable.",
         options: {},
         optionExamples: ["true"],
