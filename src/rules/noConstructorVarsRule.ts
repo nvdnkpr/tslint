@@ -22,7 +22,10 @@ export class Rule extends Lint.Rules.AbstractRule {
     /* tslint:disable:object-literal-sort-keys */
     public static metadata: Lint.IRuleMetadata = {
         ruleName: "no-constructor-vars",
-        description: "Disallows the `public` and `private` modifiers for constructor parameters.",
+        description: "Disallows paramater properties.",
+        rationale: Lint.Utils.dedent`
+            Parameter properties can be confusing to those new to TS as they are less explicit
+            than other ways of declaring and initializing class members.`,
         optionsDescription: "Not configurable.",
         options: {},
         optionExamples: ["true"],

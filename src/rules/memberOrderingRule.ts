@@ -26,12 +26,13 @@ export class Rule extends Lint.Rules.AbstractRule {
     public static metadata: Lint.IRuleMetadata = {
         ruleName: "member-ordering-rule",
         description: "Enforces member ordering.",
-        optionsDescription:
-`Three arguments may be optionally provided:
+        rationale: "A consistent ordering for class members can make classes easier to read, navigate, and edit.",
+        optionsDescription: Lint.Utils.dedent`
+            Three arguments may be optionally provided:
 
-    * \`public-before-private \` All public members must be declared before private members.
-    * \`static-before-instance \` All static members must be declared before instance members.
-    * \`variables-before-functions\` All variables needs to be declared before functions.`,
+            * \`public-before-private \` All public members must be declared before private members.
+            * \`static-before-instance \` All static members must be declared before instance members.
+            * \`variables-before-functions\` All variables needs to be declared before functions.`,
         options: {
             type: "list",
             listType: {

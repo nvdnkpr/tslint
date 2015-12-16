@@ -23,6 +23,10 @@ export class Rule extends Lint.Rules.AbstractRule {
     public static metadata: Lint.IRuleMetadata = {
         ruleName: "max-line-length",
         description: "Requires lines to be under a certain max length.",
+        rationale: Lint.Utils.dedent`
+            Limiting the length of a line of code improces code readability.
+            It also makes comparing code side-by-side easier and works smoother with
+            various editors, IDEs, and version control diff viewers.`,
         optionsDescription: "An integer indicating the max length of lines.",
         options: {
             type: "number"

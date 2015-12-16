@@ -23,11 +23,13 @@ export class Rule extends Lint.Rules.AbstractRule {
     public static metadata: Lint.IRuleMetadata = {
         ruleName: "member-access-rule",
         description: "Requires explicit visibility declarations for class members.",
-        optionsDescription:
-`Two arguments may be optionally provided:
+        rationale: "Explicit visibility declarations can make code more readable and accessible for those new to TS.",
+        optionsDescription: Lint.Utils.dedent`
+            Two arguments may be optionally provided:
 
-  * \`"check-accessor"\` enforces explicit visibility on get/set accessors (can only be public)
-  * \`"check-constructor"\`  enforces explicit visibility on constructors (can only be public)`,        options: {
+            * \`"check-accessor"\` enforces explicit visibility on get/set accessors (can only be public)
+            * \`"check-constructor"\`  enforces explicit visibility on constructors (can only be public)`,
+        options: {
             type: "list",
             listType: {
                 type: "enum",

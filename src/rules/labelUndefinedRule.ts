@@ -23,6 +23,8 @@ export class Rule extends Lint.Rules.AbstractRule {
     public static metadata: Lint.IRuleMetadata = {
         ruleName: "label-undefined",
         description: "Checks that labels are defined before usage.",
+        descriptionDetails: "This rule is now implemented in the TypeScript compiler and does not need to be used.",
+        rationale: "Using `break` or `continue` to go to an out-of-scope label is an error in JS.",
         optionsDescription: "Not configurable.",
         options: {},
         optionExamples: ["true"],

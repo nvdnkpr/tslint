@@ -23,13 +23,14 @@ export class Rule extends Lint.Rules.AbstractRule {
     public static metadata: Lint.IRuleMetadata = {
         ruleName: "jsdoc-format",
         description: "Enforces basic format rules for JSDoc comments.",
-        descriptionDetails:
-`The following rules are enforced for JSDoc comments (comments starting with \`/**\`):
- 
-  * each line contains an asterisk and asterisks must be aligned
-  * each asterisk must be followed by either a space or a newline (except for the first and the last)
-  * the only characters before the asterisk on each line must be whitespace characters
-  * one line comments must start with \`/** \` and end with \`*/\``,
+        descriptionDetails: Lint.Utils.dedent`
+            The following rules are enforced for JSDoc comments (comments starting with \`/**\`):
+             
+            * each line contains an asterisk and asterisks must be aligned
+            * each asterisk must be followed by either a space or a newline (except for the first and the last)
+            * the only characters before the asterisk on each line must be whitespace characters
+            * one line comments must start with \`/** \` and end with \`*/\``,
+        rationale: "Helps maintain a consistent, readable style for JSDoc comments.",
         optionsDescription: "Not configurable.",
         options: {},
         optionExamples: ["true"],

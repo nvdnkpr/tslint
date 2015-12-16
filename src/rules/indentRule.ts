@@ -26,11 +26,14 @@ export class Rule extends Lint.Rules.AbstractRule {
     public static metadata: Lint.IRuleMetadata = {
         ruleName: "indent",
         description: "Enforces indentation with tabs or spaces.",
-        optionsDescription:
-`One of the following arguments must be provided:
+        rationale: Lint.Utils.dedent`
+            Using only one of tabs or spaces for indentation leads to more consistent editor behavior,
+            cleaner diffs in version control, and easier programatic manipulation.`,
+        optionsDescription: Lint.Utils.dedent`
+            One of the following arguments must be provided:
 
-* \`"spaces"\` enforces consistent spaces.
-* \`"tabs"\` enforces consistent tabs.`,
+            * \`"spaces"\` enforces consistent spaces.
+            * \`"tabs"\` enforces consistent tabs.`,
         options: {
             type: "enum",
             enumValues: ["tabs", "spaces"],

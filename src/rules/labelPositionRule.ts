@@ -22,7 +22,12 @@ export class Rule extends Lint.Rules.AbstractRule {
     /* tslint:disable:object-literal-sort-keys */
     public static metadata: Lint.IRuleMetadata = {
         ruleName: "label-position",
-        description: "Only allows labels on sensible statements.",
+        description: "Only allows labels in sensible locations.",
+        descriptionDetails: "This rule only allows labels to be on `do/for/while/switch` statements.",
+        rationale: Lint.Utils.dedent`
+            Labels in JavaScript only can be used in conjunction with \`break\` or \`continue\`,
+            constructs meant to be used for loop flow control. While you can theoretically use
+            labels on any block statement in JS, it is considered poor code structure to do so.`,
         optionsDescription: "Not configurable.",
         options: {},
         optionExamples: ["true"],

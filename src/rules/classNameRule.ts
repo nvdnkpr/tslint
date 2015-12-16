@@ -23,7 +23,7 @@ export class Rule extends Lint.Rules.AbstractRule {
     public static metadata: Lint.IRuleMetadata = {
         ruleName: "class-name",
         description: "Enforces PascalCased class and interface names.",
-        rationale: "Helps maintain a consistent, readable style in your codebase.",
+        rationale: "Makes it easy to differentitate classes from regular variables at a glance.",
         optionsDescription: "Not configurable.",
         options: {},
         optionExamples: ["true"],

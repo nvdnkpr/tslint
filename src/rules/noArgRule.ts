@@ -22,7 +22,11 @@ export class Rule extends Lint.Rules.AbstractRule {
     /* tslint:disable:object-literal-sort-keys */
     public static metadata: Lint.IRuleMetadata = {
         ruleName: "no-arg",
-        description: "Disallows access to `arguments.callee`.",
+        description: "Disallows use of `arguments.callee`.",
+        rationale: Lint.Utils.dedent`
+            Using \`arguments.callee\` makes various performance optimizations impossible.
+            See [=MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments/callee)
+            for more details on why to avoid \`arguments.callee\`.`,
         optionsDescription: "Not configurable.",
         options: {},
         optionExamples: ["true"],
