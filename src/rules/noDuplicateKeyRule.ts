@@ -23,7 +23,9 @@ export class Rule extends Lint.Rules.AbstractRule {
     public static metadata: Lint.IRuleMetadata = {
         ruleName: "no-duplicate-key",
         description: "Disallows duplicate keys in object literals.",
-        rationale: "There is no good reason to define an object literal with the same key twice.",
+        rationale: Lint.Utils.dedent`
+            There is no good reason to define an object literal with the same key twice.
+            This rule is now implemented in the TypeScript compiler and does not need to be used.`,
         optionsDescription: "Not configurable.",
         options: {},
         optionExamples: ["true"],

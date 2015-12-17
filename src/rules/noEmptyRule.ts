@@ -23,6 +23,7 @@ export class Rule extends Lint.Rules.AbstractRule {
     public static metadata: Lint.IRuleMetadata = {
         ruleName: "no-empty",
         description: "Disallows empty blocks.",
+        descriptionDetails: "Blocks with a comment inside are not considered empty.",
         rationale: "Empty blocks are often indicators of missing code.",
         optionsDescription: "Not configurable.",
         options: {},

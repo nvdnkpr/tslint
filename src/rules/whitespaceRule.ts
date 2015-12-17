@@ -30,7 +30,7 @@ export class Rule extends Lint.Rules.AbstractRule {
     /* tslint:disable:object-literal-sort-keys */
     public static metadata: Lint.IRuleMetadata = {
         ruleName: "whitespace",
-        description: "Requires spacing whitespace.",
+        description: "Enforces whitespace style conventions.",
         rationale: "Helps maintain a readable, consistent style in your codebase.",
         optionsDescription: Lint.Utils.dedent`
             Seven arguments may be optionally provided:

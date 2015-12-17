@@ -23,6 +23,9 @@ export class Rule extends Lint.Rules.AbstractRule {
     public static metadata: Lint.IRuleMetadata = {
         ruleName: "no-use-before-declare",
         description: "Disallows usage of variables before their declaration.",
+        descriptionDetails: Lint.Utils.dedent`
+            This rule is primarily useful when using the \`var\` keyword -
+            the compiler will detect if a \`let\` and \`const\` variable is used before it is declared.`,
         optionsDescription: "Not configurable.",
         options: {},
         optionExamples: ["true"],

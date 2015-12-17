@@ -23,7 +23,12 @@ export class Rule extends Lint.Rules.AbstractRule {
     public static metadata: Lint.IRuleMetadata = {
         ruleName: "no-duplicate-variable",
         description: "Disallows duplicate variable declarations in the same block scope.",
-        rationale: "A variable can be reassigned if necessary - there's no good reason to have a duplicate variable declaration.",
+        descriptionDetails: Lint.Utils.dedent`
+            This rule is only useful when using the \`var\` keyword -
+            the compiler will detect redeclarations of \`let\` and \`const\` variables.`,
+        rationale: Lint.Utils.dedent`
+            A variable can be reassigned if necessary -
+            there's no good reason to have a duplicate variable declaration.`,
         optionsDescription: "Not configurable.",
         options: {},
         optionExamples: ["true"],

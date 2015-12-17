@@ -23,11 +23,13 @@ export class Rule extends Lint.Rules.AbstractRule {
     public static metadata: Lint.IRuleMetadata = {
         ruleName: "no-var-requires",
         description: "Disallows the use of require statements except in import statements.",
-        descriptionDetails: 'In other words, the use of forms such as `var module = require("module")` is banned.',
+        descriptionDetails: Lint.Utils.dedent`
+            In other words, the use of forms such as \`var module = require("module")\` are banned.
+            Instead use ES6 style imports or \`import foo = require('foo')\` imports.`,
         optionsDescription: "Not configurable.",
         options: {},
         optionExamples: ["true"],
-        type: "functionality",
+        type: "typescript",
     };
     /* tslint:enable:object-literal-sort-keys */
 
