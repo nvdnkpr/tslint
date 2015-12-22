@@ -24,7 +24,7 @@ const OPTION_PUBLIC_BEFORE_PRIVATE = "public-before-private";
 export class Rule extends Lint.Rules.AbstractRule {
     /* tslint:disable:object-literal-sort-keys */
     public static metadata: Lint.IRuleMetadata = {
-        ruleName: "member-ordering-rule",
+        ruleName: "member-ordering",
         description: "Enforces member ordering.",
         rationale: "A consistent ordering for class members can make classes easier to read, navigate, and edit.",
         optionsDescription: Lint.Utils.dedent`

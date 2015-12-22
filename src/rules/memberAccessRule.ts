@@ -21,7 +21,7 @@ import * as Lint from "../lint";
 export class Rule extends Lint.Rules.AbstractRule {
     /* tslint:disable:object-literal-sort-keys */
     public static metadata: Lint.IRuleMetadata = {
-        ruleName: "member-access-rule",
+        ruleName: "member-access",
         description: "Requires explicit visibility declarations for class members.",
         rationale: "Explicit visibility declarations can make code more readable and accessible for those new to TS.",
         optionsDescription: Lint.Utils.dedent`
