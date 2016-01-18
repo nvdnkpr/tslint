@@ -25,9 +25,18 @@ export class Rule extends Lint.Rules.AbstractRule {
     public static metadata: Lint.IRuleMetadata = {
         ruleName: "triple-equals",
         description: "Requires `===` and `!==` in place of `==` and `!=`.",
-        optionsDescription: "Not configurable.",
-        options: {},
-        optionExamples: ["true"],
+        optionsDescription: Lint.Utils.dedent `
+            One argument may be optionally provided:
+
+            * \`"allow-null-check"\` allows \`==\` and \`!=\` when comparing to \`null\`.`,
+        options: {
+            type: "list",
+            listType: {
+                type: "enum",
+                enumValues: [OPTION_ALLOW_NULL_CHECK],
+            },
+        },
+        optionExamples: ["true", '[true, "allow-null-check"]'],
         type: "functionality",
     };
     /* tslint:enable:object-literal-sort-keys */
