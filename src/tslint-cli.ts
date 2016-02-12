@@ -199,7 +199,11 @@ const processFile = (file: string) => {
     const rulesDirectories = getRulesDirectories(configuration.rulesDirectory, configurationDir);
 
     if (argv.r != null) {
-        rulesDirectories.push(argv.r);
+        if (Array.isArray(argv.r)){
+            rulesDirectories.push(argv.r);
+        } else {
+            rulesDirectories.push(argv.r);
+        }
     }
 
     const linter = new Linter(file, contents, {
